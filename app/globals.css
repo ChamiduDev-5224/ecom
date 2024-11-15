@@ -18,4 +18,5 @@
   .arivl-card{
     @apply bg-brand-bg-card my-auto mx-auto rounded-xl hover:cursor-pointer hover:shadow-2xl transition-colors;
   }
+  
 } 
