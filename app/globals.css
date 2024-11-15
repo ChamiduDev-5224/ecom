@@ -6,7 +6,16 @@
   .pointer{
     @apply cursor-pointer;
   }
-  .flx{
+  .flxr{
     @apply flex flex-row;  
+  }
+  .flxc{
+    @apply flex flex-col;  
+  }
+  .section-span{
+    @apply text-black z-50 text-5xl font-extrabold lg:pl-16;
+  }
+  .arivl-card{
+    @apply bg-brand-bg-card my-auto mx-auto rounded-lg hover:cursor-pointer hover:shadow-2xl;
   }
 } 

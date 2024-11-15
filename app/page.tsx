@@ -1,31 +1,259 @@
+"use client";
+
 import Image from "next/image";
-import { Fragment } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  return (
-   <>
-      <div className="bg-black">
-        <p className="text-center text-sm md:text-base text-brand-font-white p-2">Sign up and get 20% off to your first order <span className="font-semibold underline cursor-pointer">Sign Up Now</span></p>
-      </div>
-      
-      <div className="flx p-6 justify-between">
-          <div className="flx gap-3 place-items-center">
-            <Image src="/icons/menu.svg" className="pointer md:hidden" width={20} height={20} alt="mobile-menuIcon"/>
-            <p className="text-black font-extrabold uppercase text-2xl ml-4">shop.co</p>
-            <span className="pointer hover:text-violet-300 ml-10">Shop</span>
-            <Image src="/icons/arrowDown.svg" className="pointer" width={16} height={16} alt="mobile-menuIcon"/>
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasHydrated, setHasHydrated] = useState(false);
 
-            <span className="pointer hover:text-violet-300 ml-2">On Sale</span>
-            <span className="pointer hover:text-violet-300 ml-2">New Arrivals</span>
-            <span className="pointer hover:text-violet-300 ml-2">Brands</span>
-          </div>
-          <div className="flx gap-2">
-            <input className="bg-brand-bg-serbg border-0 rounded-lg pl-4 text-sm" placeholder="Search For Products"/>
-            <Image src="/icons/search.svg" className="pointer md:hidden" width={20} height={20} alt="mobile-menuIcon"/>
-            <Image src="/icons/cart.svg" className="pointer" width={20} height={20} alt="mobile-menuIcon"/>
-            <Image src="/icons/user.svg" className="pointer" width={20} height={20} alt="mobile-menuIcon"/>
-          </div>
+  useEffect(() => {
+    setHasHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (isHovered) {
+      const timer = setTimeout(() => {
+        setIsHovered(false);
+      }, 1000);
+      return () => clearTimeout(timer); // Clear timeout on cleanup
+    }
+  }, [isHovered]);
+
+  if (!hasHydrated) {
+    return null; // Prevent render until client-side hydration is complete
+  }
+
+  return (
+    <div>
+      <div className="bg-black">
+        <p className="text-center text-sm md:text-base text-brand-font-white p-2">
+          Sign up and get 20% off your first order{" "}
+          <span className="font-semibold underline cursor-pointer">
+            Sign Up Now
+          </span>
+        </p>
       </div>
-   </>
+
+      <div className="flxr p-6 justify-between">
+        <div className="flxr gap-3 place-items-center">
+          <Image
+            src="/icons/menu.svg"
+            className="pointer lg:hidden"
+            width={20}
+            height={20}
+            alt="mobile-menuIcon"
+          />
+          <p className="text-black font-extrabold uppercase text-2xl ml-4">
+            shop.co
+          </p>
+          <span className="pointer ml-10 hidden lg:block">Shop</span>
+          <Image
+            src="/icons/arrowDown.svg"
+            onMouseEnter={() => setIsHovered(true)}
+            className="pointer hidden lg:block"
+            width={16}
+            height={16}
+            alt="mobile-menuIcon"
+          />
+          {isHovered && (
+            <div className="absolute bg-brand-bg-sub rounded-md w-60 delay-150 h-60 top-[90px] left-[200px] opacity-100">
+              <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+              </ul>
+            </div>
+          )}
+          <span className="pointer hover:text-violet-300 hidden lg:block ml-2">
+            On Sale
+          </span>
+          <span className="pointer hover:text-violet-300 hidden lg:block ml-2">
+            New Arrivals
+          </span>
+          <span className="pointer hover:text-violet-300 hidden lg:block ml-2">
+            Brands
+          </span>
+        </div>
+
+        <div className="flxr gap-2 lg:pr-4">
+          <div className="hidden lg:flxr bg-brand-bg-serbg text-brand-bg-sub rounded-2xl pl-4">
+            <Image
+              src="/icons/search.svg"
+              className="pointer text-brand-bg-sub"
+              width={20}
+              height={20}
+              alt="search-icon"
+            />
+            <input
+              className="bg-transparent text-black border-0 pl-4 mr-5 place-items-center focus:shadow-2xl md:w-[150px] lg:w-[340px] xl:lg:w-[500px] text-sm"
+              placeholder="Search For Products"
+            />
+          </div>
+          <Image
+            src="/icons/search.svg"
+            className="pointer lg:hidden"
+            width={20}
+            height={20}
+            alt="search-icon"
+          />
+          <Image
+            src="/icons/cart.svg"
+            className="pointer"
+            width={20}
+            height={20}
+            alt="cart-icon"
+          />
+          <Image
+            src="/icons/user.svg"
+            className="pointer"
+            width={20}
+            height={20}
+            alt="user-icon"
+          />
+        </div>
+      </div>
+
+      <section className="bg-brand-bg-sub h-[80.5vh] flxc lg:flxr">
+        <div className="mt-16 px-10 lg:px-0">
+          <p className="section-span">FIND CLOTHES</p>
+          <p className="section-span">THAT MATCHES</p>
+          <p className="section-span">YOUR STYLE</p>
+          <p className="font-thin relative mt-4 lg:pl-16 opacity-80">
+            Browse through our diverse range of meticulously crafted garments,
+            designed to bring out your individuality and cater to your sense of
+            style.
+          </p>
+          <button className="bg-black text-white text-center py-2 px-10 w-full lg:w-fit rounded-3xl relative lg:ml-16 mt-4  hover:drop-shadow-2xl">
+            Shop Now
+          </button>
+          <div className="text-black flxr justify-center lg:pl-16 gap-8 md:gap-16 lg:gap-20 my-10">
+            <div className="w-28">
+              <h2 className="font-bold text-4xl">200+</h2>
+              <h4 className="font-thin text-xs">International Brands</h4>
+            </div>
+
+            <div>
+              <h2 className="font-bold text-4xl">2,000+</h2>
+              <h4 className="font-thin text-xs">High-Quality Products</h4>
+            </div>
+
+            <div>
+              <h2 className="font-bold text-4xl">30,000+</h2>
+              <h4 className="font-thin text-xs">Happy Customers</h4>
+            </div>
+          </div>
+        </div>
+        <div className="relative">
+          <Image
+            src="/icons/start-s.svg"
+            className="pointer absolute top-28 left-40"
+            width={30}
+            height={30}
+            alt="start small-icon"
+          />
+          <Image
+            src="/icons/sectionOne.webp"
+            className="pointer object-cover relative h-full object-center"
+            width={1000}
+            height={1000}
+            alt="section-background"
+          />
+          <Image
+            src="/icons/start-l.svg"
+            className="pointer absolute top-4 left-3/4"
+            width={60}
+            height={40}
+            alt="start large-icon"
+          />
+        </div>
+      </section>
+      {/* brands */}
+      <div className=" h-[10vh] bg-black flxr justify-between lg:px-16 z-50">
+        <Image
+          src="/icons/brands/b2.svg"
+          className="w-10 lg:w-24"
+          width={100}
+          height={30}
+          alt="brand 2"
+        />
+        <Image
+          src="/icons/brands/b5.svg"
+          className="w-10 lg:w-24"
+          width={100}
+          height={30}
+          alt="brand 5"
+        />
+        <Image
+          src="/icons/brands/b1.svg"
+          className="w-10 lg:w-24"
+          width={100}
+          height={30}
+          alt="brand 1"
+        />
+        <Image
+          src="/icons/brands/b3.svg"
+          className="w-10 lg:w-24"
+          width={100}
+          height={30}
+          alt="brand 3"
+        />
+        <Image
+          src="/icons/brands/b4.svg"
+          className="w-10 lg:w-24"
+          width={100}
+          height={30}
+          alt="brand 4"
+        />
+      </div>
+      {/*End brands */}
+
+      {/* products */}
+      <section className="mb-12">
+        <h1 className="uppercase font-extrabold text-5xl text-center my-10">
+          New Arrivals
+        </h1>
+        <div id="card-row" className="flxr justify-between px-16">
+          <div className="arivl-card">
+            <Image
+              src="/icons/new-arrivals/ar1.svg"
+              className="w-60"
+              width={100}
+              height={30}
+              alt="brand 4"
+            />
+          </div>
+          <div className="arivl-card">
+            <Image
+              src="/icons/new-arrivals/ar2.svg"
+              className="w-56"
+              width={100}
+              height={30}
+              alt="brand 4"
+            />
+          </div>
+          <div className="arivl-card">
+            <Image
+              src="/icons/new-arrivals/ar3.svg"
+              className="w-60"
+              width={100}
+              height={30}
+              alt="brand 4"
+            />
+          </div>
+          <div className="arivl-card">
+            <Image
+              src="/icons/new-arrivals/ar4.svg"
+              className="w-60"
+              width={100}
+              height={30}
+              alt="brand 4"
+            />
+          </div>
+        </div>
+        <button className="bg-transparent rounded-full py-2 px-10 my-auto mx-auto border-2 mt-6 flxr justify-center hover:border-blue-100 hover:drop-shadow-2xl">View All</button>
+      </section>
+      {/* End products */}
+    </div>
   );
 }
