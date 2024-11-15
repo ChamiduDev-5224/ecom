@@ -438,8 +438,8 @@ export default function Home() {
           <div className="w-full sm:w-1/2 md:w-1/4 mb-6">
             <h3 className="text-2xl font-bold">ECOM.CO</h3>
             <p className="text-gray-600 mt-2">
-              We have clothes that suit your style and which you're proud to wear.
-              From women to men.
+              We have clothes that suit your style and which you are proud to wear.
+              From women to men 
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-gray-500"><i className="fab fa-twitter"></i></a>
