@@ -73,6 +73,19 @@ export const urls = {
     isDiscount:false,
     oldPrice:"5,000LKR",
     discount:"-11%"
+  }],
+  browseDress:[{
+    url:"/icons/browse-by/bb1.svg",
+    alt:"browse 1",
+  },{
+    url:"/icons/browse-by/bb2.svg",
+    alt:"browse 2",
+  },{
+    url:"/icons/browse-by/bb3.svg",
+    alt:"browse 3",
+  },{
+    url:"/icons/browse-by/bb4.svg",
+    alt:"browse 4",
   }]
 
 };
