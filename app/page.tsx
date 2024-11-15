@@ -279,15 +279,52 @@ console.log(urls);
               </div>
               )
             })}
-              
-
-
-          
         </div>
         <button className="bg-transparent rounded-full py-2 px-10 my-auto mx-auto border-2 mt-6 flxr justify-center hover:border-blue-100 hover:drop-shadow-2xl">View All
         </button>
       </section>
       {/* End products */}
+
+      {/* Browse By products */}
+            <div className="rounded-xl bg-brand-bg-main my-20 mx-12 lg:mx-24 bg-opacity-30">
+              <h1 className="uppercase font-extrabold text-center pt-12  text-4xl lg:text-5xl">BROWSE BY dress STYLE</h1>
+
+                <div className="flxc lg:flxr gap-3 px-10 pt-10">
+                  <Image
+                      src={`${urls.browseDress[0].url}`}  
+                      className="rounded-xl w-full lg:w-[50%] object-cover"
+                      width={100}
+                      height={30}
+                      alt={urls.browseDress[0].alt}
+                    />
+                  <Image
+                      src={`${urls.browseDress[2].url}`}  
+                      className="rounded-xl w-full lg:w-[60%] object-cover"
+                      width={100}
+                      height={30}
+                      alt={urls.browseDress[2].alt}
+                    />
+                </div>
+
+                <div className="flxc lg:flxr gap-3 px-10 pt-3 pb-10">
+                  <Image
+                      src={`${urls.browseDress[1].url}`}  
+                      className="rounded-xl w-full lg:w-[60%] object-cover"
+                      width={100}
+                      height={30}
+                      title="ad"
+                      alt={urls.browseDress[1].alt}
+                    />
+                  <Image
+                      src={`${urls.browseDress[3].url}`}  
+                      className="rounded-xl w-full object-cover"
+                      width={100}
+                      height={30}
+                      alt={urls.browseDress[3].alt}
+                    />
+                  </div>
+            </div>
+      {/* End Browse By products */}
     </div>
   );
 }
