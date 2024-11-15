@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
+import {urls} from './utility/info'
 export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
   const [hasHydrated, setHasHydrated] = useState(false);
+
+console.log(urls);
 
   useEffect(() => {
     setHasHydrated(true);
@@ -45,7 +47,7 @@ export default function Home() {
             alt="mobile-menuIcon"
           />
           <p className="text-black font-extrabold uppercase text-2xl ml-4">
-            shop.co
+            ecom.co
           </p>
           <span className="pointer ml-10 hidden lg:block">Shop</span>
           <Image
@@ -209,49 +211,81 @@ export default function Home() {
       {/*End brands */}
 
       {/* products */}
-      <section className="mb-12">
+      <section className="mb-12 mt-72 md:mt-96 lg:mt-0">
         <h1 className="uppercase font-extrabold text-5xl text-center my-10">
           New Arrivals
         </h1>
-        <div id="card-row" className="flxr justify-between px-16">
-          <div className="arivl-card">
-            <Image
-              src="/icons/new-arrivals/ar1.svg"
-              className="w-60"
-              width={100}
-              height={30}
-              alt="brand 4"
-            />
-          </div>
-          <div className="arivl-card">
-            <Image
-              src="/icons/new-arrivals/ar2.svg"
-              className="w-56"
-              width={100}
-              height={30}
-              alt="brand 4"
-            />
-          </div>
-          <div className="arivl-card">
-            <Image
-              src="/icons/new-arrivals/ar3.svg"
-              className="w-60"
-              width={100}
-              height={30}
-              alt="brand 4"
-            />
-          </div>
-          <div className="arivl-card">
-            <Image
-              src="/icons/new-arrivals/ar4.svg"
-              className="w-60"
-              width={100}
-              height={30}
-              alt="brand 4"
-            />
-          </div>
+        <div id="card-row" className="flxc gap-5 md:flxr justify-between px-16">
+            {urls.arrivalInfo.map((val,index)=>{
+              return (
+                <div  key={index}>
+                  <div className="arivl-card">
+                      <Image
+                      src={`${val.url}`}  
+                      className={index==1?"w-56 my-auto mx-auto":"w-60 my-auto mx-auto"}
+                      width={100}
+                      height={30}
+                      alt={val.alt}
+                    />
+                  </div>
+                  <p className="text-sm font-semibold my-1">{val.name}</p>
+                  <div>
+                    <span className="font-bold my-1">{val.price}</span>
+                    {val.isDiscount && <>
+                      <span className="font-bold my-1 mx-2 text-brand-bg-main line-through">{val.oldPrice}</span>
+                      <span className="bg-brand-bg-lightRed bg-opacity-40 text-brand-font-discount py-1 px-4 rounded-xl text-[10px]">{val.discount}</span>
+                    </>}
+                  </div>
+              </div>
+              )
+            })}
+              
         </div>
-        <button className="bg-transparent rounded-full py-2 px-10 my-auto mx-auto border-2 mt-6 flxr justify-center hover:border-blue-100 hover:drop-shadow-2xl">View All</button>
+        <button className="bg-transparent rounded-full py-2 px-10 my-auto mx-auto border-2 mt-6 flxr justify-center hover:border-blue-100 hover:drop-shadow-2xl">View All
+        </button>
+      </section>
+      {/* End products */}
+
+          <div className="bg-brand-bg-main opacity-25 h-[2px] rounded-full mx-24"/>
+
+      {/* products */}
+      <section className="mb-12">
+        <h1 className="uppercase font-extrabold text-5xl text-center my-10">
+          top selling
+        </h1>
+        <div id="card-row" className="flxc gap-5 md:flxr justify-between px-16">
+
+        {urls.topSaleInfo.map((val,index)=>{
+              return (
+                <div  key={index}>
+                  <div className="arivl-card">
+                      <Image
+                      src={`${val.url}`}  
+                      className={index==1?"w-52 my-auto mx-auto":"w-60 my-auto mx-auto"}
+                      width={100}
+                      height={30}
+                      alt={val.alt}
+                    />
+                  </div>
+                  <p className="text-sm font-semibold my-1">{val.name}</p>
+                  <div>
+                    <span className="font-bold my-1">{val.price}</span>
+                    {val.isDiscount && <>
+                      <span className="font-bold my-1 mx-2 text-brand-bg-main line-through">{val.oldPrice}</span>
+                      <span className="bg-brand-bg-lightRed bg-opacity-40 text-brand-font-discount py-1 px-4 rounded-xl text-[10px]">{val.discount}</span>
+                    </>}
+                  </div>
+
+              </div>
+              )
+            })}
+              
+
+
+          
+        </div>
+        <button className="bg-transparent rounded-full py-2 px-10 my-auto mx-auto border-2 mt-6 flxr justify-center hover:border-blue-100 hover:drop-shadow-2xl">View All
+        </button>
       </section>
       {/* End products */}
     </div>

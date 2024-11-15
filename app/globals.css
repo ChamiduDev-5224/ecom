@@ -16,6 +16,6 @@
     @apply text-black z-50 text-5xl font-extrabold lg:pl-16;
   }
   .arivl-card{
-    @apply bg-brand-bg-card my-auto mx-auto rounded-lg hover:cursor-pointer hover:shadow-2xl;
+    @apply bg-brand-bg-card my-auto mx-auto rounded-xl hover:cursor-pointer hover:shadow-2xl transition-colors;
   }
 } 
