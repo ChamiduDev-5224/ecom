@@ -174,6 +174,7 @@ export default function Home() {
             className="pointer object-cover relative h-full object-center"
             width={1000}
             height={1000}
+            priority
             alt="section-background"
           />
           <Image
@@ -181,6 +182,7 @@ export default function Home() {
             className="pointer absolute top-4 left-3/4"
             width={60}
             height={40}
+            priority
             alt="start large-icon"
           />
         </div>
@@ -193,6 +195,7 @@ export default function Home() {
           width={100}
           height={30}
           alt="brand 2"
+          priority
         />
         <Image
           src="/icons/brands/b5.svg"
@@ -200,6 +203,7 @@ export default function Home() {
           width={100}
           height={30}
           alt="brand 5"
+          priority
         />
         <Image
           src="/icons/brands/b1.svg"
@@ -207,6 +211,7 @@ export default function Home() {
           width={100}
           height={30}
           alt="brand 1"
+          priority
         />
         <Image
           src="/icons/brands/b3.svg"
@@ -214,6 +219,7 @@ export default function Home() {
           width={100}
           height={30}
           alt="brand 3"
+          priority
         />
         <Image
           src="/icons/brands/b4.svg"
@@ -221,6 +227,7 @@ export default function Home() {
           width={100}
           height={30}
           alt="brand 4"
+          priority
         />
       </div>
       {/*End brands */}
@@ -245,6 +252,7 @@ export default function Home() {
                     width={100}
                     height={30}
                     alt={val.alt}
+                    priority
                   />
                 </div>
                 <p className="text-sm font-semibold my-1">{val.name}</p>
@@ -293,6 +301,7 @@ export default function Home() {
                     width={100}
                     height={30}
                     alt={val.alt}
+                    priority
                   />
                 </div>
                 <p className="text-sm font-semibold my-1">{val.name}</p>
@@ -332,6 +341,7 @@ export default function Home() {
             width={100}
             height={30}
             alt={urls.browseDress[0].alt}
+            priority
           />
           <Image
             src={`${urls.browseDress[2].url}`}
@@ -339,6 +349,7 @@ export default function Home() {
             width={100}
             height={30}
             alt={urls.browseDress[2].alt}
+            priority
           />
         </div>
 
@@ -350,6 +361,7 @@ export default function Home() {
             height={30}
             title="ad"
             alt={urls.browseDress[1].alt}
+            priority
           />
           <Image
             src={`${urls.browseDress[3].url}`}
@@ -357,6 +369,7 @@ export default function Home() {
             width={100}
             height={30}
             alt={urls.browseDress[3].alt}
+            priority
           />
         </div>
       </div>
@@ -374,6 +387,7 @@ export default function Home() {
               height={24}
               alt="Arrow Left"
               onClick={courselBack}
+              priority
             />
             <Image
               src="/icons/arrow-r.svg"
@@ -382,6 +396,7 @@ export default function Home() {
               height={24}
               alt="Arrow Right"
               onClick={courselForward}
+              priority
             />
           </div>
         </div>
@@ -402,6 +417,7 @@ export default function Home() {
                     width={16}
                     height={16}
                     alt="correct"
+                    priority
                   />
                 </div>
                 <p className="opacity-50">{val.feedback}</p>
@@ -495,11 +511,11 @@ export default function Home() {
         <div className="mt-10 border-t pt-6 flex justify-between items-center text-gray-500 text-sm">
           <p>ECOM.CO © 2000-2023, All Rights Reserved</p>
           <div className="flex">
-            <Image src="/icons/cards/visa.svg" alt="Visa" width={80} height={80} />
-            <Image src="/icons/cards/master.svg" alt="MasterCard" width={80} height={80} />
-            <Image src="/icons/cards/paypal.svg" alt="PayPal" width={80} height={80} />
-            <Image src="/icons/cards/apple.svg" alt="Apple Pay" width={80} height={80} />
-            <Image src="/icons/cards/google.svg" alt="Google Pay" width={80} height={80} />
+            <Image priority src="/icons/cards/visa.svg" alt="Visa" width={80} height={80} />
+            <Image priority src="/icons/cards/master.svg" alt="MasterCard" width={80} height={80} />
+            <Image priority src="/icons/cards/paypal.svg" alt="PayPal" width={80} height={80} />
+            <Image priority src="/icons/cards/apple.svg" alt="Apple Pay" width={80} height={80} />
+            <Image priority src="/icons/cards/google.svg" alt="Google Pay" width={80} height={80} />
           </div>
         </div>
       </div>
