@@ -146,17 +146,17 @@ export default function Home() {
           </button>
           <div className="text-black flxr justify-center lg:pl-16 gap-8 md:gap-16 lg:gap-20 my-10">
             <div className="w-28">
-              <h2 className="font-bold text-4xl">200+</h2>
+              <h2 className="font-bold text-3xl lg:text-4xl">200+</h2>
               <h4 className="font-thin text-xs">International Brands</h4>
             </div>
 
             <div>
-              <h2 className="font-bold text-4xl">2,000+</h2>
+              <h2 className="font-bold text-3xl lg:text-4xl">2,000+</h2>
               <h4 className="font-thin text-xs">High-Quality Products</h4>
             </div>
 
             <div>
-              <h2 className="font-bold text-4xl">30,000+</h2>
+              <h2 className="font-bold text-3xl lg:text-4xl">30,000+</h2>
               <h4 className="font-thin text-xs">Happy Customers</h4>
             </div>
           </div>
@@ -508,14 +508,14 @@ export default function Home() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-10 border-t pt-6 flex justify-between items-center text-gray-500 text-sm">
+        <div className="mt-10 border-t pt-6 flxc md:flxr justify-between items-center text-gray-500 text-sm">
           <p>ECOM.CO © 2000-2023, All Rights Reserved</p>
           <div className="flex">
-            <Image priority src="/icons/cards/visa.svg" alt="Visa" width={80} height={80} />
-            <Image priority src="/icons/cards/master.svg" alt="MasterCard" width={80} height={80} />
-            <Image priority src="/icons/cards/paypal.svg" alt="PayPal" width={80} height={80} />
-            <Image priority src="/icons/cards/apple.svg" alt="Apple Pay" width={80} height={80} />
-            <Image priority src="/icons/cards/google.svg" alt="Google Pay" width={80} height={80} />
+            <Image priority src="/icons/cards/visa.svg" className="w-24 md:w-60 lg:w-80" alt="Visa" width={80} height={80} />
+            <Image priority src="/icons/cards/master.svg" className="w-24 md:w-60 lg:w-80" alt="MasterCard" width={80} height={80} />
+            <Image priority src="/icons/cards/paypal.svg" className="w-24 md:w-60 lg:w-80" alt="PayPal" width={80} height={80} />
+            <Image priority src="/icons/cards/apple.svg" className="w-24 md:w-60 lg:w-80" alt="Apple Pay" width={80} height={80} />
+            <Image priority src="/icons/cards/google.svg" className="w-24 md:w-60 lg:w-80" alt="Google Pay" width={80} height={80} />
           </div>
         </div>
       </div>
