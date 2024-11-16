@@ -377,12 +377,12 @@ export default function Home() {
 
       {/* Happy Customers */}
       <section>
-        <div className="flxr justify-between px-20">
-          <p className="text-5xl  font-extrabold">OUR HAPPY CUSTOMERS</p>
+        <div className="flxc md:flxr justify-between px-10 md:px-14 lg:px-20">
+          <p className="text-5xl font-extrabold">OUR HAPPY CUSTOMERS</p>
           <div id="arrowIcons" className="flxr gap-2">
             <Image
               src="/icons/arrow-l.svg"
-              className="cursor-pointer active:border-2"
+              className="cursor-pointer hidden md:block active:border-2"
               width={24}
               height={24}
               alt="Arrow Left"
@@ -391,7 +391,7 @@ export default function Home() {
             />
             <Image
               src="/icons/arrow-r.svg"
-              className="cursor-pointer active:border-2"
+              className="cursor-pointer hidden md:block active:border-2"
               width={24}
               height={24}
               alt="Arrow Right"
